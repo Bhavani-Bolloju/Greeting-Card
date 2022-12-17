@@ -1,8 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Just Another Hand", cursive;
+  color: #474747;
 }
 
 .container {
@@ -10,43 +17,66 @@ body {
 }
 
 .card {
+  border-radius: 20px;
   perspective: 130rem;
   -moz-perspective: 150rem;
   position: absolute;
   top: 0;
   left: 0;
-  height: 450px;
-  width: 300px;
-}
-
-.card-2 {
-  height: 450px;
-  width: 300px;
-  background-color: #7dacfc;
-  border-top-left-radius: 80px;
+  height: 480px;
+  width: 405px;
 }
 
 .card__side {
-  height: 450px;
+  height: 100%;
   width: 100%;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transition: all 0.8s ease;
+  transition: all 1s ease;
   position: absolute;
   top: 0;
   left: 0;
 }
 .card__side--front {
-  background-color: yellow;
+  overflow: hidden;
+  border-radius: 10px;
   transform-origin: 0 100%;
-  border-top-left-radius: 80px;
 }
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__side--front div {
+  position: absolute;
+  top: 20%;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.card-text {
+  text-align: center;
+}
+
+.card-text h1 {
+  line-height: 50px;
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+.card-text p {
+  font-size: 24px;
+}
+
 .card__side--back {
-  background-color: aqua;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #f3ccff;
   transform-origin: 0 100%;
   transform: rotateY(180deg) translateX(-100%);
-  border-top-right-radius: 80px;
 }
 
 .card:hover .card__side--front {
@@ -54,4 +84,39 @@ body {
 }
 .card:hover .card__side--back {
   transform: rotateY(0deg) translateX(-100%);
+}
+
+.card-2 {
+  font-family: "Work Sans", sans-serif;
+  border-radius: 20px;
+  height: 480px;
+  width: 400px;
+  background-color: #f3ccff;
+  margin-left: 2px;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.15);
+}
+
+.card-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-2 div {
+  /* color: #5e5e5e; */
+  color: #927a99;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 24px;
+}
+
+.card-2 div p {
+  line-height: 1.6;
+}
+
+.card-2 div p:nth-child(1) {
+  margin-bottom: 40px;
+}
+.card-2 div p:nth-child(2) {
+  text-transform: uppercase;
+  font-weight: 600;
 }
